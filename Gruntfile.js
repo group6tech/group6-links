@@ -315,15 +315,6 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*',
             'CNAME'
           ]
-        }, {
-          src: 'node_modules/apache-server-configs/dist/.htaccess',
-          dest: '<%= config.dist %>/.htaccess'
-        }, {
-          expand: true,
-          dot: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-          dest: '<%= config.dist %>'
         }]
       },
       styles: {
