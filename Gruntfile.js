@@ -323,7 +323,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'CNAME'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -360,6 +361,17 @@ module.exports = function (grunt) {
         },
         uglify: true
       }
+    },
+
+    // Publish the site to github pages
+    'gh-pages': {
+    options: {
+        base: 'dist',
+        clone: '.gh-pages',
+        repo: 'git@github.com:group6tech/group6-links.git',
+        branch: 'gh-pages'
+      },
+      src: ['**']
     },
 
     // Run some tasks in parallel to speed up build process
@@ -433,6 +445,11 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    'gh-pages'
   ]);
 
   grunt.registerTask('default', [
