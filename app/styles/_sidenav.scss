@@ -1,0 +1,57 @@
+//
+// Sidenav
+// ============================================================================
+
+.sidenav {
+  &.affix {
+    top: 0;
+
+    width: 255px;
+  }
+
+  .nav {
+    > li {
+      > a {
+        padding: $padding-small-vertical $padding-base-horizontal;
+
+        color: $gray-light;
+        font-weight: bold;
+
+        &:hover {
+          margin-left: -1px;
+
+          color: $link-color;
+
+          border-left: 1px solid $link-color;
+          background-color: transparent;
+        }
+      }
+
+      > ul {
+        display: none;
+
+        > li {
+          > a {
+            padding-left: ($padding-base-horizontal * 2);
+
+            font-weight: normal;
+          }
+        }
+      }
+
+      &.active {
+        > a {
+          margin-left: -2px;
+
+          color: $link-color;
+
+          border-left: 2px solid $link-color;
+        }
+
+        > ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
