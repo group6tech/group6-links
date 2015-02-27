@@ -139,16 +139,6 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Mocha testing framework configuration options
-    mocha: {
-      all: {
-        options: {
-          run: true,
-          urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-        }
-      }
-    },
-
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
       options: {
@@ -210,8 +200,7 @@ module.exports = function (grunt) {
             '<%= config.dist %>/scripts/{,*/}*.js',
             '<%= config.dist %>/styles/{,*/}*.css',
             '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*',
-            '<%= config.dist %>/*.{ico,png}'
+            '<%= config.dist %>/styles/fonts/{,*/}*.*'
           ]
         }
       }
