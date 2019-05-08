@@ -3,7 +3,7 @@
   "description": "Collection of usefull links",
   "repository": "git@github.com:group6tech/group6-links.git",
   "devDependencies": {
-    "bower": "^1.8.2",
+    "bootstrap-sass": "^3.4.1",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.0",
     "grunt-cli": "^1.2.0",
@@ -28,9 +28,12 @@
     "grunt-wiredep": "^1.7.0",
     "jshint-stylish": "^0.4.0",
     "load-grunt-tasks": "^0.4.0",
+    "modernizr": "^3.7.1",
     "time-grunt": "^0.4.0"
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
   }
 }
