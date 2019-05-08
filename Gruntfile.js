@@ -345,11 +345,11 @@ module.exports = function (grunt) {
 
     // Publish the site to github pages
     'gh-pages': {
-    options: {
+      options: {
         base: 'dist',
-        clone: '.gh-pages',
-        repo: 'git@github.com:group6tech/group6-links.git',
-        branch: 'gh-pages'
+        clone: '.azure',
+        repo: 'https://github.com/group6tech/group6-links',
+        branch: 'azure'
       },
       src: ['**']
     },
