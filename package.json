@@ -22,7 +22,7 @@
     "grunt-usemin": "^2.3.0",
     "jshint-stylish": "^0.4.0",
     "load-grunt-tasks": "^5.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "time-grunt": "^0.4.0"
   },
   "engines": {
