@@ -5,7 +5,7 @@
   "repository": "git@github.com:group6tech/group6-links.git",
   "devDependencies": {
     "bootstrap-sass": "^3.4.1",
-    "grunt": "^1.0.0",
+    "grunt": "^1.3.0",
     "grunt-cli": "^1.2.0",
     "grunt-concurrent": "^3.0.0",
     "grunt-contrib-clean": "^2.0.0",
