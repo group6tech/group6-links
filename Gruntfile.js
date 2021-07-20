@@ -8,8 +8,6 @@
 // If you want to recursively match all subfolders, use:
 // 'test/spec/**/*.js'
 
-const sass = require('node-sass');
-
 module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
@@ -59,41 +57,13 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Compiles Sass to CSS and generates necessary files if requested
-    sass: {
-      options: {
-        implementation: sass,
-        includePaths: ['node_modules']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.app %>/styles',
-          src: ['*.{scss,sass}'],
-          dest: '.tmp/styles',
-          ext: '.css'
-        }]
-      },
-      server: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.app %>/styles',
-          src: ['*.{scss,sass}'],
-          dest: '.tmp/styles',
-          ext: '.css'
-        }]
-      }
-    },
-
     // Renames files for browser caching purposes
     rev: {
       dist: {
         files: {
           src: [
             '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
             '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*'
           ]
         }
       }
@@ -114,12 +84,11 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: [
           '<%= config.dist %>',
-          '<%= config.dist %>/images',
-          '<%= config.dist %>/styles'
+          '<%= config.dist %>/images'
         ]
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
-      css: ['<%= config.dist %>/styles/{,*/}*.css']
+      css: []
     },
 
     // The following *-min tasks produce minified files in the dist folder
@@ -179,32 +148,19 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*',
             'CNAME'
           ]
         }]
-      },
-      styles: {
-        expand: true,
-        dot: true,
-        cwd: '<%= config.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
       }
     },
 
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
-        'sass:server',
-        'copy:styles'
       ],
       test: [
-        'copy:styles'
       ],
       dist: [
-        'sass',
-        'copy:styles',
         'imagemin',
         'svgmin'
       ]
@@ -215,9 +171,6 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'concat',
-    'cssmin',
-    'uglify',
     'copy:dist',
     'rev',
     'usemin',
