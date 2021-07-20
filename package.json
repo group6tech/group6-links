@@ -13,6 +13,7 @@
     "grunt-contrib-htmlmin": "^3.0.0",
     "grunt-contrib-imagemin": "^3.0.0",
     "grunt-contrib-jshint": "^2.0.0",
+    "grunt-gh-pages": "^4.0.0",
     "grunt-rev": "^0.1.0",
     "grunt-svgmin": "^6.0.0",
     "grunt-usemin": "^2.3.0",
